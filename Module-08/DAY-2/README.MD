@@ -1,41 +1,39 @@
-# Ex.No:8(B) IO-FILE READER/WRITER
+# Ex.No:8(A) IO-FILE STREAM
 ## AIM:
-To create a java program to append a NUMBER in a file “testout.txt” using Writer.
-
+To implement a Java Program to write a String in a file "testout.txt" using FileOutputStream
 
 ## ALGORITHM :
-1.	It creates a file testout.txt, writes "Welcome to Java File Concept -Reader" to it, and displays this initial content.
-2.	It reopens the file in append mode and adds "1234567890" at the end of the existing content.
-3.	It reads the file's content (Welcome to Java File Concept -Reader1234567890) and displays it.
-4.	The file is deleted using file.delete().
-5.	It tries to read the file again, but this throws an exception since the file no longer exists.
-
-
+1.  Define the string "Welcome to Saveetha" and convert it to a byte array b using getBytes().
+2.	Use Scanner to prompt the user for start (starting index) and length (number of bytes) to write from the string.
+3.	Open testout.txt using FileOutputStream, and write the specified portion of b from the start index for length bytes, then close the output stream.
+4.	Open testout.txt using FileInputStream, read its contents byte-by-byte, convert each byte to a character, and print it to display the file's content.
+5.	Use file.delete() to delete testout.txt.
+6.	Attempt to read the deleted file, which triggers a FileNotFoundException as the file no longer exists.
 
 
 ## PROGRAM:
  ```
-/*
-Program to implement a IO File Reader/Writer using Java
-Developed by: 
-RegisterNumber:  
-*/
+
+Program to implement a IO File Stream using Java
+Developed by: BAKKIYA LAKSHMI M
+RegisterNumber: 212222220006
+
 ```
 
 ## Sourcecode.java:
-
-
-
-
-
-
+```java
+   
+FileOutputStream fout=new FileOutputStream("testout.txt");    
+String s="HI EVERYBODY...";    
+byte b[]=s.getBytes();//converting string into byte array    
+fout.write(b);    
+fout.close();    
+System.out.println("Successfully Completed");
+```
 
 ## OUTPUT:
 
-
+![image](https://github.com/user-attachments/assets/356bba2f-e08e-48f6-b4bf-1ff5c7349095)
 
 ## RESULT:
-Thus, the java program to append a NUMBER in a file “testout.txt” using Writer.was executed and verified successfully
-
-
-
+Thus the implementation of a Java Program to write a String in a file "testout.txt" using FileOutputStream was executed and verified successfully
